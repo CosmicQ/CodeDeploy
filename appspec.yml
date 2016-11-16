@@ -5,3 +5,6 @@ hooks:
     - location: scripts/install_git.sh
       timeout: 300
       runas: root
+    - location: scripts/install_awslogs.sh
+      timeout: 300
+      runas: root
