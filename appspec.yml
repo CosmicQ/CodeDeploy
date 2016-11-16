@@ -2,6 +2,6 @@ version: 0.0
 os: linux
 hooks:
   BeforeInstall:
-    - location: CodeDeploy/install_git.sh
+    - location: scripts/install_git.sh
       timeout: 300
       runas: root
