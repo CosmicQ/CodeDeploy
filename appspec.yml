@@ -1,10 +1,11 @@
 version: 0.0
 os: linux
 hooks:
-  Install:
+  BeforeInstall:
     - location: scripts/install_git.sh
       timeout: 300
       runas: root
+  Install:
     - location: scripts/install_awslogs.sh
       timeout: 300
       runas: root
