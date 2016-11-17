@@ -8,3 +8,6 @@ hooks:
     - location: scripts/install_awslogs.sh
       timeout: 300
       runas: root
+    - location: scripts/install_metrics.sh
+      timeout: 300
+      runas: root
