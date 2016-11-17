@@ -7,3 +7,6 @@ gpgcheck=0
 enabled=1' | tee /etc/yum.repos.d/sensu.repo
 
 yum -y install sensu
+
+chkconfig --add sensu-client
+chkconfig sensu-client on
