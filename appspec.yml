@@ -1,5 +1,19 @@
 version: 0.0
 os: linux
+files:
+  - source: files/config.json
+    destination: /etc/sensu/
+  - source: files/client.json
+    destination: /etc/sensu/conf.d/
+permissions:
+  - object: /etc/sensu/config.json
+    owner: sensu
+    group: sensu
+    mode: 644
+  - object: /etc/sensu/conf.d/client.json
+    owner: sensu
+    group: sensu
+    mode: 644
 hooks:
   BeforeInstall:
     - location: scripts/install_git.sh
@@ -12,5 +26,10 @@ hooks:
       timeout: 300
       runas: root
     - location: scripts/install_sensu_agent.sh
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: scripts/restart_sensu_agent.sh
       timeout: 300
       runas: root
